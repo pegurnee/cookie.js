@@ -13,13 +13,15 @@ Cookies.set = function (key, value, options) {
 };
 Cookies.get = function (key) {
     "use strict";
-    var indexOfKey, value;
+    var indexOfKey, value, encodedKey, lengthOfKey;
     
-    indexOfKey = document.cookie.indexOf(encodeURIComponent(key) + '=');
+    encodedKey = encodeURIComponent(key) + '=';
+    lengthOfKey = encodedKey.length;
+    indexOfKey = document.cookie.indexOf(encodedKey);
     value = '';
     
     if (indexOfKey > -1) {
-        value = decodeURIComponent(document.cookie.substring(indexOfKey + encodeURIComponent(key).length + 1));
+        value = decodeURIComponent(document.cookie.substring(indexOfKey + lengthOfKey));
     }
     return value;
 };

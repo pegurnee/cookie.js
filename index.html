@@ -5,9 +5,12 @@
         <script src="cookie.js"></script>
     </head>
     <body>
-        <button onclick="Cookies.set('hello', 'omgmybffjill')">Create Cookie</button><br />
+        <button onclick="ch.set('hello', 'omgmybffjill')">Create Cookie</button><br />
         <span style="font-family:'monospace'">Select which cookie data do you want to read:</span>
         <select id="cookies"></select><br />
-        <button onclick="alert(Cookies.get('hello'))">Grab Cookie Data</button>
+        <button onclick="alert(ch.get('hello'))">Grab Cookie Data</button>
+        <script>
+          var ch = new CookieHandler();
+        </script>
     </body>
 </html>
